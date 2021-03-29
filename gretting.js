@@ -1,5 +1,6 @@
-const form = document.querySelector(".js-form"),
-input = form.querySelector("input"),
+const toDoform = document.querySelector(".js-toDoform"),
+toDoinput = form.querySelector("input"),
+toDoList = document.querySelector(".js-toDoList")
 greeting = document.querySelector(".js-greetings");
 
 const USER_LS="currentUser",
