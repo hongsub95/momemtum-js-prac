@@ -1,9 +1,11 @@
 const COORDS = 'coords'
-
+const API_KEY = "0cfb28ea66b1dec513433cf0484cf2fa"
 function saveCoords(coords){
     localStorage.setItem(COORD,JSON.stringify(coordsObj));
 }
-
+function getWeather(lat,lng){
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}`)
+}
 function handleCeoSuccess(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -11,7 +13,8 @@ function handleCeoSuccess(position){
         latitude,
         longitude
     };
-    saveCoords(coords);
+    saveCoords(coordsObj);
+    getWeather(latitude,longitude);
 }
 
 function handleGeoError(){
